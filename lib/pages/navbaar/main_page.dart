@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_cubit/pages/navbaar/bar_item_page.dart';
-import 'package:flutter_cubit/pages/navbaar/home_page.dart';
+import 'package:flutter_cubit/pages/home_page.dart';
 import 'package:flutter_cubit/pages/navbaar/search_page.dart';
 
 import 'my_page.dart';
