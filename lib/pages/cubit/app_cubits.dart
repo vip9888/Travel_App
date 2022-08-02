@@ -22,4 +22,14 @@ class AppCubits extends Cubit<CubitStates> {
     } catch (e) {}
   }
 
+  detailPage(DataModel data) {
+    emit(DetailState(data));
+  }
+
+  goHome() {
+    emit(LoadedState(places));
+  }
+
+
+
 }

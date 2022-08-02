@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(body: BlocBuilder<AppCubits, CubitStates>(
       builder: (context, state) {
         if (state is LoadedState) {
-          var info = state.places;
+          List info = state.places;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -103,21 +103,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   children: [
                     ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 4,
-                      itemBuilder: (BuildContext context, index) {
-                        return Container(
-                          margin: const EdgeInsets.only(
-                            right: 15,
-                            top: 10,
-                          ),
-                          height: 300,
-                          width: 200,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            image: DecorationImage(
-                              image: AssetImage("img/" + images2[index]),
-                              fit: BoxFit.cover,
+                      itemCount: info.length,
+                      itemBuilder: (_, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            if (info != null && info.length != 0) {
+                              BlocProvider.of<AppCubits>(context)
+                                  .detailPage(info[index]);
+                            } else {
+                              print("Kya Hal Ha");
+                            }
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              right: 15,
+                              top: 10,
+                            ),
+                            height: 300,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                image: AssetImage("img/" + info[index].img),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         );

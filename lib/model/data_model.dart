@@ -4,9 +4,9 @@ import 'package:flutter/foundation.dart';
 class DataModel {
   String name;
   String img;
-  int price;
-  int people;
-  int stars;
+  String price;
+  String people;
+  String stars;
   String description;
   String location;
   DataModel({
