@@ -7,6 +7,7 @@ import 'package:flutter_cubit/pages/welcome_page.dart';
 
 import '../detail_page.dart';
 import '../home_page.dart';
+import '../navbaar/main_page.dart';
 import 'app_cubit_states.dart';
 
 class AppCubitsLogic extends StatefulWidget {
@@ -29,7 +30,7 @@ class _AppCubitsLogicState extends State<AppCubitsLogic> {
             return DetailPage();
           }
           if (state is LoadedState) {
-            return HomePage();
+            return MainPage();
           }
           if (state is LoadingState) {
             return Center(
